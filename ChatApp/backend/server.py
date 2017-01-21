@@ -7,7 +7,11 @@ app = Flask(__name__)
 
 counter=0
 
-@app.route("/get", methods = ["GET"])
+def list_tasks(client):
+	query = client.query(kind='Message')
+	query.order = ['created']
+
+	return list(query.fetch())
 
 def create_client(project_id):
 	return datastore.Client(project_id)
@@ -32,6 +36,7 @@ def delete_message(client, message_id):
 	key = client.key('Message', message_id)
 	client.delete(key)
 
+@app.route("/get", methods = ["GET"])
 def get():
     return "Hello World"
 
