@@ -1,4 +1,5 @@
 import logging
+import random
 
 # Imports the Google Cloud client library
 from google.cloud import datastore
@@ -7,8 +8,6 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
-
-counter=0
 
 def list_tasks(client):
     query = client.query(kind='Message')
@@ -45,28 +44,26 @@ def get():
 
 @app.route("/post", methods = ["POST"])
 def post():
-    message=''
-    # Instantiates a client
-    datastore_client = create_client('hackucsc2017-156309')
+   	message=''
+	# Instantiates a client
+	datastore_client = create_client('hackucsc2017-156309')
 
-    # The kind for the new entity
-    kind = 'Message'
-    # The name/ID for the new entity
-    counter += 1
-    name = str(counter)
-    # The Cloud Datastore key for the new entity
-    task_key = datastore_client.key(kind, name)
+	# The kind for the new entity
+	kind = 'Message'
+	# The name/ID for the new entity
+	name = str(random.getrandbits(128))
+	# The Cloud Datastore key for the new entity
+	task_key = datastore_client.key(kind, name)
 
-    # Prepares the new entity
-    task = datastore.Entity(key=task_key)
-    task['description'] = message
+	# Prepares the new entity
+	task = datastore.Entity(key=task_key)
+	task['description'] = message
 
-    # Saves the entity
-    datastore_client.put(task)
+	# Saves the entity
+	datastore_client.put(task)
 
-    print('Saved {}: {}'.format(task.key.name, task['description']))
-    return "Hello World"
-
+	print('Saved {}: {}'.format(task.key.name, task['description']))
+	return request.form['text']
 
 @app.errorhandler(500)
 def server_error(e):
