@@ -44,7 +44,7 @@ def get():
 
 @app.route("/post", methods = ["POST"])
 def post():
-   	message=''
+   	message=request.form['text']
 	# Instantiates a client
 	datastore_client = create_client('hackucsc2017-156309')
 
