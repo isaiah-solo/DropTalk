@@ -9,7 +9,7 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 CORS(app)
 
-def list_tasks(client):
+def list_messages(client):
     query = client.query(kind='Message')
     query.order = ['created']
 
@@ -40,7 +40,8 @@ def delete_message(client, message_id):
 
 @app.route("/get", methods = ["GET"])
 def get():
-    return "Hello World"
+	datastore_client = create_client('hackucsc2017-156309')
+	return list_messages(datastore_client)
 
 @app.route("/post", methods = ["POST"])
 def post():
