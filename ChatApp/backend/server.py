@@ -8,6 +8,30 @@ app = Flask(__name__)
 counter=0
 
 @app.route("/get", methods = ["GET"])
+
+def create_client(project_id):
+	return datastore.Client(project_id)
+
+def add_message(client, description):
+	key = client.key('Message')
+
+	message = datastore.Entity(
+	key, exclude_from_indexes=['description'])
+
+	message.update({
+		'created': datetime.datetime.utcnow(),
+		'description': description,
+		'done': False
+	})
+
+	client.put(message)
+
+	return message.key
+
+def delete_message(client, message_id):
+	key = client.key('Message', message_id)
+	client.delete(key)
+
 def get():
     return "Hello World"
 
@@ -15,7 +39,7 @@ def get():
 def post():
 	message=''
 	# Instantiates a client
-	datastore_client = datastore.Client()
+	datastore_client = create_client('hackucsc2017-156309')
 
 	# The kind for the new entity
 	kind = 'Message'
