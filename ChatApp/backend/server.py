@@ -11,7 +11,7 @@ CORS(app)
 
 def list_messages(client):
     query = client.query(kind='Message')
-    query.order = ['created']
+    # query.order = ['created']
 
     return list(query.fetch())
 
@@ -41,7 +41,7 @@ def delete_message(client, message_id):
 @app.route("/get", methods = ["GET"])
 def get():
 	datastore_client = create_client('hackucsc2017-156309')
-	return list_messages(datastore_client)
+	return flask.jsonify(list_messages(datastore_client))
 
 @app.route("/post", methods = ["POST"])
 def post():
