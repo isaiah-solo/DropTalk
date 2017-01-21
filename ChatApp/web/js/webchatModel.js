@@ -7,8 +7,8 @@ function newWebChatModel() {
 		$.ajax({
 			type: 'POST',
 			data: test,
-			dataType: "json",
-			url: "",
+			dataType: "application/json",
+			url: "https://hackucsc2017-156309.appspot.com/post",
 			success: function(responseData, textStatus, jqXHR) {
 				console.log(responseData);
 			},
