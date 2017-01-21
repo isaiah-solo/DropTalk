@@ -7,8 +7,8 @@ function newWebChatView(buttonElem) {
     }
 
     buttonElem.onclick = function() {
-        if (handlers.tester) {
-            handlers.tester();
+        if (handlers.sendText) {
+            handlers.sendText();
         }
     };
 

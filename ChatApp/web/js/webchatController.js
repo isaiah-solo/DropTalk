@@ -1,6 +1,6 @@
 function newWebChatController(model, view) {
-	view.bind('tester', function() {
-		model.test();
+	view.bind('sendText', function() {
+		model.sendText();
 	});
 
 	return {};

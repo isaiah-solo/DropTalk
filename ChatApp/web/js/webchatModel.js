@@ -1,12 +1,12 @@
 function newWebChatModel() {
-	function test() {
-		console.log("test");
-	}
-
-	function sendText(text) {
+	function sendText() {
+		var test = {
+			user: "isaiah",
+			text: "This is a test",
+		};
 		$.ajax({
 			type: 'POST',
-			data: text,
+			data: test,
 			dataType: "json",
 			url: "",
 			success: function(responseData, textStatus, jqXHR) {
@@ -19,7 +19,6 @@ function newWebChatModel() {
 	}
 
 	return {
-		test: test,
 		sendText: sendText,
 	};
 }
