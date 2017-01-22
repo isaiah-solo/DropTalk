@@ -38,9 +38,14 @@ def add_message(client, text, latitude, longitude, timestamp, user_id):
 
     return obj.key
 
-def delete_message(client, message_id):
-    key = client.key('Messages', message_id)
-    client.delete(key)
+def delete_messages(client):
+    query = client.query(kind='Messages')
+	timeUntilOld = datetime.datetime.utcnow() - 30
+	query.add_filter('timestamp', '>=',timeUntilOld )
+    list_of_entities = list(query.fetch())
+	list_of_keys = ndb.put_multi(list_of_entities)
+	list_of_entities = ndb.get_multi(list_of_keys)
+	ndb.delete_multi(list_of_keys)
 
 @app.route("/get", methods = ["GET"])
 def get():
@@ -49,7 +54,10 @@ def get():
 
 @app.route("/post", methods = ["POST"])
 def post():
-   	text = request.form['message']
+	datastore_client = create_client('hackucsc2017-156309')
+   	delete_messages(datastore_client) # delete messages that are old from the DB
+
+	text = request.form['message']
    	latitude = request.form['latitude']
    	longitude = request.form['longitude']
    	timestamp = datetime.datetime.utcnow()
