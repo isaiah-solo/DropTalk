@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.databinding/library/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="957dc30b1495f8689271e00d56ab09cc9192df02">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.databinding-library-1.2.1_b06a96219c4f27efa54cf23fd7619ae78335d55d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_0fb1495140e5d09f94ea42d6f6ccf5cf60d8b4b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_c5c39a478d21c8c761c159a4192afa1b64e699e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_fd265c4670cf8cc9f96259b186a34c4f5c9a04f4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_de0c75d8e8165957753bb6e7b55c732afaea9ac7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="269aeccade3daff5ac46b79a11ac3225c42902dd">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e1e810959ccbcf6f0a192f67999dcad6f92052dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_2b2d31d653d1c0ad009917cecfaa7e32df329c86/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_6d682817d5eea35804e8aa410b1afe64b4047582/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_566f95071123784806d50aaedbc2a9f94e89e018/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_db5e6018b354231cae5238692245250f090895d3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_74e095964b0f8712d3dd39093b491f8655003e02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_d9991dc6933a715d3d971906d6aa2390e6d70f58/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_3bf589b326ad94489b0c58ed254a7baa5e14c948/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.databinding/adapters/1.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c56d29136c2257f63f08c29c4e739efb03b06c7d">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.databinding-adapters-1.2.1_fcb505050b39ee14b05c290cb4269e5464b08baf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_48fd94465206063550561c80fb9cc4d247ee2785/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_6a7705b7441efffbb8e9a0cff5b1bac7c1193a23/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_66a8faeb6800d2ffc7d4398fc28ec230a0b41edc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_fb7d3143660884b9a254daf3177de04ae7807ae4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/com/android/databinding/baseLibrary/2.2.2/baseLibrary-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8e3519b9d5287840df40776a8268ae336ca9f063">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/baseLibrary-2.2.2_7ed53c723ae13fdba19a1b45153e478d184e8ae5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_3145ec645d7eed291660fef5bcafe36f434e919e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7a9eec542eb09bfc8fefd285ffd74e886111a791">
+        <dex dex="/Users/zayz/Projects/hackathon/ChatApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_27d0c173b72d4fc397a25a63df615e6b17ca835c/classes.dex" />
+    </item>
+
+</items>
