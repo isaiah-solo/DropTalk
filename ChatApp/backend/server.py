@@ -77,7 +77,7 @@ def postToGet():
 		# get distance between 
 		# myLon, myLat and message['longitude'],messages['latitude']
 		# if it's shorter than 50 ft return
-		if distance < 1:
+		if distance < 0.0009144:
 			newList.append(message)
 	return flask.jsonify(newList)
 
