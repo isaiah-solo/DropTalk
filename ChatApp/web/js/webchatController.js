@@ -1,3 +1,5 @@
+var stamp = "";
+
 function newWebChatController(model, view) {
 	view.bind('sendText', function() {
 	    var textarea = document.getElementById("fname").value;
@@ -6,7 +8,7 @@ function newWebChatController(model, view) {
 		    model.postText(textarea);
 
             // Clear textarea
-	        document.getElementById("text").value = "";
+	        document.getElementById("fname").value = "";
 
             $("#list").append(
                 $('<li>').append(textarea)
@@ -21,12 +23,27 @@ function newWebChatController(model, view) {
 	view.bind('populateFeed', function(data) {
         // Have a variable to hold all of the elements at once
         // so we can replace the whole ul seamlessly
+	var flag = 0;
         var blob = "";
 		for(i = 0; i < data.length; i++) {
 			var text = data[i].message;
-                        blob += "<li>"+text+"</li>";
+			if (data[i].timestamp == stamp) {
+				flag = 1;
+			} else if (stamp.length > 0 && i == data.length - 1) {
+				stamp = data[i].timestamp;
+				blob += "<li>" + text + "</li>";
+			} else if (stamp.length == 0 && i == data.length - 1) {
+				stamp = data[i].timestamp;
+				blob += '<li  tabindex="1">' + text + "</li>";
+			} else if (flag == 1 || stamp.length == 0) {
+				blob += "<li>" + text + "</li>";
+			}
 		}
-        $("#inside").html(blob);
+
+	if (blob.length > 0) {
+        	$("#inside").append(blob);
+		$('#inside').scrollTop($('#inside')[0].scrollHeight);
+	}
 	});
 
 	return {};
