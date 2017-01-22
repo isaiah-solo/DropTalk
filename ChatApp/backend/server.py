@@ -8,9 +8,26 @@ from google.cloud import datastore
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
 from google.appengine.ext import ndb
+from math import radians, cos, sin, asin, sqrt
 
 app = Flask(__name__)
 CORS(app)
+
+def haversine(lon1, lat1, lon2, lat2):
+    """
+    Calculate the great circle distance between two points 
+    on the earth (specified in decimal degrees)
+    """
+    # convert decimal degrees to radians 
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+
+    # haversine formula 
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a)) 
+    r = 6371 # Radius of earth in kilometers. Use 3956 for miles
+    return c * r
 
 def list_messages(client):
     query = client.query(kind='Messages')
@@ -48,10 +65,21 @@ def delete_messages(client):
 	list_of_entities = ndb.get_multi(list_of_keys)
 	ndb.delete_multi(list_of_keys)
 
-@app.route("/get", methods = ["GET"])
-def get():
+@app.route("/postToGet", methods = ["POST"])
+def postToGet():
+	myLon = request.form['longitude']
+	myLat = request.form['latitude']
 	datastore_client = create_client('hackucsc2017-156309')
-	return flask.jsonify(list_messages(datastore_client))
+	listOfMessages = list_messages(data_storeclient)
+	newList = {}
+	for message in listOfMessages:
+		distance = haversine(myLon, myLat, message['longitude'],messages['latitude'])
+		# get distance between 
+		# myLon, myLat and message['longitude'],messages['latitude']
+		# if it's shorter than 50 ft return
+		if distance < 1:
+			newList.append(message)
+	return flask.jsonify(newList)
 
 @app.route("/post", methods = ["POST"])
 def post():
