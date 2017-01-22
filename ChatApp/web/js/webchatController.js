@@ -1,12 +1,12 @@
 function newWebChatController(model, view) {
 	view.bind('sendText', function() {
-	    var textarea = document.getElementById("textarea").value;
+	    var textarea = document.getElementById("fname").value;
         // Only send stuff if there's stuff to send
         if(textarea !== ""){
 		    model.postText(textarea);
 
             // Clear textarea
-	        document.getElementById("textarea").value = "";
+	        document.getElementById("text").value = "";
 
             $("#list").append(
                 $('<li>').append(textarea)
@@ -24,9 +24,9 @@ function newWebChatController(model, view) {
         var blob = "";
 		for(i = 0; i < data.length; i++) {
 			var text = data[i].message;
-            blob += "<li>"+text+"</li>";
+                        blob += "<li>"+text+"</li>";
 		}
-        $("#list").html(blob);
+        $("#inside").html(blob);
 	});
 
 	return {};
