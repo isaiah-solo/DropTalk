@@ -13,7 +13,7 @@ CORS(app)
 
 def list_messages(client):
     query = client.query(kind='Messages')
-    # query.order = ['created']
+    query.order = ['timestamp']
 
     return list(query.fetch())
 
