@@ -12,7 +12,7 @@ function newWebChatView(buttonElem) {
 		}
 	};
 
-    $('#text').on('keyup', function(e) {
+    $('#fname').on('keyup', function(e) {
         if (e.which == 13 && handlers.sendText) {
 			handlers.sendText();
         }
