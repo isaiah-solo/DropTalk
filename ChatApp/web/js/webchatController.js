@@ -1,15 +1,17 @@
 function newWebChatController(model, view) {
 	view.bind('sendText', function() {
 	    var textarea = document.getElementById("textarea").value;
-		model.postText(textarea);
+        // Only send stuff if there's stuff to send
+        if(textarea !== ""){
+		    model.postText(textarea);
 
-        // Clear textarea
-	    document.getElementById("textarea").value = "";
+            // Clear textarea
+	        document.getElementById("textarea").value = "";
 
-        $("#list").append(
-            $('<li>').append(textarea)
-        );
-
+            $("#list").append(
+                $('<li>').append(textarea)
+            );
+        }
 	});
 
 	view.bind('loadTexts', function(handlers) {
