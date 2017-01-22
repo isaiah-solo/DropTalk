@@ -81,6 +81,11 @@ def postToGet():
 			newList.append(message)
 	return flask.jsonify(newList)
 
+@app.route("/get", methods = ["GET"])
+def get():
+  datastore_client = create_client('hackucsc2017-156309')
+  return flask.jsonify(list_messages(datastore_client))
+
 @app.route("/post", methods = ["POST"])
 def post():
 	datastore_client = create_client('hackucsc2017-156309')
