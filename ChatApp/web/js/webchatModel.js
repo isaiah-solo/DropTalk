@@ -1,18 +1,18 @@
 function newWebChatModel() {
-	function postText() {
-		var test = {
+	function postText(textarea) {
+		var data = {
 			user_id: "isaiah",
-			message: "This is not a test",
+			message: textarea,
 			latitude: "1.1",
 			longitude: "1.1",
 		};
 		$.ajax({
 			type: 'POST',
-			data: test,
+			data: data,
 			dataType: "application/json",
 			url: "https://hackucsc2017-156309.appspot.com/post",
 			success: function(responseData, textStatus, jqXHR) {
-				console.log(responseData);
+                console.log("Successfully posted");
 			},
 			error: function(responseData, textStatus, errorThrown) {
 				console.log(responseData.responseText);

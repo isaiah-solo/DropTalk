@@ -1,6 +1,15 @@
 function newWebChatController(model, view) {
 	view.bind('sendText', function() {
-		model.postText();
+	    var textarea = document.getElementById("textarea").value;
+		model.postText(textarea);
+
+        // Clear textarea
+	    document.getElementById("textarea").value = "";
+
+        $("#list").append(
+            $('<li>').append(textarea)
+        );
+
 	});
 
 	view.bind('loadTexts', function(handlers) {
@@ -8,12 +17,14 @@ function newWebChatController(model, view) {
 	});
 
 	view.bind('populateFeed', function(data) {
-		var messageList = document.getElementById("list");
+        // Have a variable to hold all of the elements at once
+        // so we can replace the whole ul seamlessly
+        var blob = "";
 		for(i = 0; i < data.length; i++) {
-			var element = document.createElement("li");
-			var text = data[i].timestamp;
-			element.appendChild(document.createTextNode(text + "\n"));
+			var text = data[i].message;
+            blob += "<li>"+text+"</li>";
 		}
+        $("#list").html(blob);
 	});
 
 	return {};
