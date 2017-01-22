@@ -1,6 +1,7 @@
 import logging
 import random
 import flask
+import datetime
 
 # Imports the Google Cloud client library
 from google.cloud import datastore
@@ -11,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 def list_messages(client):
-    query = client.query(kind='Message')
+    query = client.query(kind='Messages')
     # query.order = ['created']
 
     return list(query.fetch())
@@ -19,24 +20,26 @@ def list_messages(client):
 def create_client(project_id):
     return datastore.Client(project_id)
 
-def add_message(client, description):
-    key = client.key('Message')
+def add_message(client, text, latitude, longitude, timestamp, user_id):
+    key = client.key('Messages')
 
-    message = datastore.Entity(
-    key, exclude_from_indexes=['description'])
+    obj = datastore.Entity(
+    key, exclude_from_indexes=['message'])
 
-    message.update({
-	'created': datetime.datetime.utcnow(),
-	'description': description,
-	'done': False
+    obj.update({
+	'message': text,
+	'latitude': latitude,
+	'longitude': longitude,
+	'timestamp': timestamp,
+	'user_id': user_id
     })
 
-    client.put(message)
+    client.put(obj)
 
-    return message.key
+    return obj.key
 
 def delete_message(client, message_id):
-    key = client.key('Message', message_id)
+    key = client.key('Messages', message_id)
     client.delete(key)
 
 @app.route("/get", methods = ["GET"])
@@ -46,26 +49,19 @@ def get():
 
 @app.route("/post", methods = ["POST"])
 def post():
-   	message=request.form['text']
+   	text = request.form['message']
+   	latitude = request.form['latitude']
+   	longitude = request.form['longitude']
+   	timestamp = datetime.datetime.utcnow()
+   	user_id = request.form['user_id']
+
 	# Instantiates a client
 	datastore_client = create_client('hackucsc2017-156309')
 
-	# The kind for the new entity
-	kind = 'Message'
-	# The name/ID for the new entity
-	name = str(random.getrandbits(128))
-	# The Cloud Datastore key for the new entity
-	task_key = datastore_client.key(kind, name)
+        # Adds message
+        add_message(datastore_client, text, latitude, longitude, timestamp, user_id)
 
-	# Prepares the new entity
-	task = datastore.Entity(key=task_key)
-	task['description'] = message
-
-	# Saves the entity
-	datastore_client.put(task)
-
-	print('Saved {}: {}'.format(task.key.name, task['description']))
-	return request.form['text']
+	return text
 
 @app.errorhandler(500)
 def server_error(e):
