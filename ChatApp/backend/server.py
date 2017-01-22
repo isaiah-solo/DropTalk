@@ -7,6 +7,7 @@ import datetime
 from google.cloud import datastore
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
+from google.appengine.ext import ndb
 
 app = Flask(__name__)
 CORS(app)
