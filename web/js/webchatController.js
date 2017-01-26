@@ -10,9 +10,6 @@ function newWebChatController(model, view) {
             // Clear textarea
 	        document.getElementById("fname").value = "";
 
-            $("#list").append(
-                $('<li>').append(textarea)
-            );
         }
 	});
 
@@ -34,7 +31,6 @@ function newWebChatController(model, view) {
 				blob += "<li>" + text + "</li>";
 			} else if (stamp.length == 0 && i == data.length - 1) {
 				stamp = data[i].timestamp;
-				blob += '<li  tabindex="1">' + text + "</li>";
 			} else if (flag == 1 || stamp.length == 0) {
 				blob += "<li>" + text + "</li>";
 			}
