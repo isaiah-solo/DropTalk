@@ -1,43 +1,44 @@
 function newWebChatModel() {
-	function postText(textarea) {
-		var data = {
-			user_id: "isaiah",
-			message: textarea,
-			latitude: "1.1",
-			longitude: "1.1",
-		};
-		$.ajax({
-			type: 'POST',
-			data: data,
-			dataType: "application/json",
-			url: "https://hackucsc2017-156309.appspot.com/post",
-			success: function(responseData, textStatus, jqXHR) {
+    function postText(textarea) {
+        var data = {
+            user_id: "isaiah",
+            message: textarea,
+            latitude: "1.1",
+            longitude: "1.1",
+        };
+        $.ajax({
+            type: 'POST',
+            data: data,
+            dataType: "application/json",
+	    url: "https://hackucsc2017-156309.appspot.com/post",
+            success: function(responseData, textStatus, jqXHR) {
                 console.log("Successfully posted");
-			},
-			error: function(responseData, textStatus, errorThrown) {
-				console.log(responseData.responseText);
-			}
-       		});
-	}
+            },
+            error: function(responseData, textStatus, errorThrown) {
+                console.log(responseData.responseText);
+            }
+        });
+    }
 
-	function getTexts(handlers) {
-                $.ajax({
-                        type: 'GET',
-                        dataType: "text",
-                        url: "https://hackucsc2017-156309.appspot.com/get",
-                        success: function(responseData, textStatus, jqXHR) {
-				handlers.populateFeed(JSON.parse(responseData));
-                        },
-                        error: function(responseData, textStatus, errorThrown) {
-                                console.log(errorThrown);
-                        }
-                });
-	}
+    function getTexts(handlers) {
+        $.ajax({
+            type: 'GET',
+            dataType: "text",
+            url: "https://hackucsc2017-156309.appspot.com/get",
+            success: function(responseData, textStatus, jqXHR) {
+                console.log(responseData);
+                handlers.populateFeed(JSON.parse(responseData));
+            },
+            error: function(responseData, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    }
 
-	return {
-		postText: postText,
-		getTexts: getTexts,
-	};
+    return {
+        postText: postText,
+        getTexts: getTexts,
+    };
 }
 
 function Texts(data) {

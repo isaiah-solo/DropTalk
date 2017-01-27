@@ -1,0 +1,43 @@
+.chatroom p {
+    color: #e1e8f0;
+    text-align: center;
+    font-family: 'Pacifico';
+    font-size: 200%;
+}
+
+.chatroom li {
+    padding: 16px 16px;
+    list-style-type: none;
+    text-decoration: none;
+    border: 1px solid #d3d3d3;
+}
+
+.chatroom .write {
+    overflow: auto;
+    display: block;
+    bottom: 20px;
+    clear: both;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.chatroom .write input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: #e8edf3;
+}
+
+#messagelist {
+    overflow: auto;
+    height: 450px;
+    max-height: 60%;
+    width: 60%;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: #e8edf3;
+}

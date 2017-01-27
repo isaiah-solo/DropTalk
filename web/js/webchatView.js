@@ -1,35 +1,28 @@
-function newWebChatView(buttonElem) {
-	// Map between callbacks and their handlers
-	var handlers = {};
+function newWebChatView() {
+    var handlers = {};
 
-	function bind(callback, fn) {
-		handlers[callback] = fn;
-	}
+    function bind(callback, fn) {
+        handlers[callback] = fn;
+    }
 
-	buttonElem.onclick = function() {
-		if (handlers.sendText) {
-			handlers.sendText();
-		}
-	};
-
-    $('#fname').on('keyup', function(e) {
+    $('#textbox').on('keyup', function(e) {
         if (e.which == 13 && handlers.sendText) {
-			handlers.sendText();
+            handlers.sendText();
         }
     });
 
-	window.onload = function() {
-		if (handlers.loadTexts) {
-			handlers.loadTexts(handlers);
+    window.onload = function() {
+        if (handlers.loadTexts) {
+            handlers.loadTexts(handlers);
 
             // Refresh every second
             setInterval(function(){ 
-                handlers.loadTexts(handlers);
+            handlers.loadTexts(handlers);
             }, 500);
-		}
-	};
+        }
+    };
 
-	return {
-		bind: bind
-	};
+    return {
+        bind: bind
+    };
 }

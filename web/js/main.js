@@ -1,6 +1,5 @@
 function main() {
 	var model = newWebChatModel();
-	var view = newWebChatView(document.getElementById("submitBox"));
+	var view = newWebChatView();
 	var controller = newWebChatController(model, view);
-
 }
