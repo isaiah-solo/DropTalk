@@ -1,11 +1,13 @@
 var stamp = "";
 
 function newWebChatController(model, view) {
+    var message = "";
+
     view.bind('sendText', function() {
-        var textbox = document.getElementById("textbox").value;
-        if (textbox !== "") {
-            model.postText(textbox);
+        if (document.getElementById("textbox").value !== "") {
+            message = document.getElementById("textbox").value;
             document.getElementById("textbox").value = "";
+            navigator.geolocation.getCurrentPosition(successLocation, errorLocation);
         }
     });
 
@@ -36,6 +38,17 @@ function newWebChatController(model, view) {
             $("#messagelist").animate({scrollTop: $("#messagelist")[0].scrollHeight});
         }
     });
+
+    function successLocation(position) {
+        if (message !== "") {
+            model.postText(message, position.coords.latitude, position.coords.longitude);
+            message = "";
+        }
+    }
+
+    function errorLocation(position) {
+        console.log("error");
+    }
 
     return {};
 }

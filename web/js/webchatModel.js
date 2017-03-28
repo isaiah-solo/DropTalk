@@ -1,21 +1,20 @@
 function newWebChatModel() {
-    function postText(textarea) {
+    function postText(text, lat, lng) {
         var data = {
             user_id: "isaiah",
-            message: textarea,
-            latitude: "1.1",
-            longitude: "1.1",
+            message: text,
+            latitude: lat.toString(),
+            longitude: lng.toString(),
         };
         $.ajax({
             type: 'POST',
             data: data,
-            dataType: "application/json",
+            dataType: "text",
 	    url: "https://hackucsc2017-156309.appspot.com/post",
             success: function(responseData, textStatus, jqXHR) {
-                console.log("Successfully posted");
             },
             error: function(responseData, textStatus, errorThrown) {
-                console.log(responseData.responseText);
+                console.log(errorThrown);
             }
         });
     }
@@ -26,7 +25,6 @@ function newWebChatModel() {
             dataType: "text",
             url: "https://hackucsc2017-156309.appspot.com/get",
             success: function(responseData, textStatus, jqXHR) {
-                console.log(responseData);
                 handlers.populateFeed(JSON.parse(responseData));
             },
             error: function(responseData, textStatus, errorThrown) {
